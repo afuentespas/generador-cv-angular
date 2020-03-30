@@ -1,0 +1,17 @@
+@mixin progress-skill($theme) {
+
+    $primary: map-get($theme, primary);
+    $secondary: map-get($theme, secondary);
+    $complementary: map-get($theme, complementary);
+
+    .progress-skill {
+        h3 {
+            color: $secondary;
+        }
+        & .progress {
+            & .progress-bar{
+                background-color: $complementary;
+            }
+        }
+    }
+}

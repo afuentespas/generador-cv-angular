@@ -1,0 +1,20 @@
+@mixin contacts($theme) {
+
+    $primary: map-get($theme, primary);
+    $secondary: map-get($theme, secondary);
+
+    .contacts {
+        & li{
+            color: $secondary;
+            & i {
+                &.fa-circle {
+                    color: $secondary;
+                }
+                &.fa-icon-color{
+                    color: darken($primary, 8%);
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,8 @@
+@import '../app-theme.scss';
+
+$theme: (
+    "primary": #93172D, 
+    "secondary": #FFFFFF,
+    "complementary": #F2BF27);
+
+@include app-theme($theme);

@@ -1,16 +1,34 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
+import { PersonalDataComponent } from './components/personal-data/personal-data.component';
+import { SectionComponent } from './components/section/section.component';
+import { ContactsComponent } from './components/contacts/contacts.component';
+import { ProgressSkillComponent } from './components/progress-skill/progress-skill.component';
+import { ExperienceComponent } from './components/experience/experience.component';
+import { EducationComponent } from './components/education/education.component';
+import { ComplementaryEducationComponent } from './components/complementary-education/complementary-education.component';
+import { LanguagesComponent } from './components/languages/languages.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PersonalDataComponent,
+    SectionComponent,
+    ContactsComponent,
+    ProgressSkillComponent,
+    ExperienceComponent,
+    EducationComponent,
+    ComplementaryEducationComponent,
+    LanguagesComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

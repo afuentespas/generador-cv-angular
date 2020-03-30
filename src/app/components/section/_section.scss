@@ -1,0 +1,25 @@
+@mixin section($theme) {
+
+    $primary: map-get($theme, primary);
+    $secondary: map-get($theme, secondary);
+
+    .section {
+        border-bottom: 1px solid darken($primary, 5%);
+        h2 {
+           color: $secondary;
+            & i{
+                background: darken($primary, 8%);
+            }
+       }
+        &.inverse {
+            border-bottom: 1px solid darken($secondary, 5%);
+            h2 {
+            color: $primary;
+                & i{
+                    color: $secondary;
+                    background: darken($primary, 8%);
+                }
+            }
+        }
+    }
+}

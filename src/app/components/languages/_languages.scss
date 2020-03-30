@@ -1,0 +1,9 @@
+@mixin languages($theme) {
+    
+    $primary: map-get($theme, primary);
+    $secondary: map-get($theme, secondary);
+
+    .languages{
+        color: $secondary;
+    }
+}

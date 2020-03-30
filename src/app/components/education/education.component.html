@@ -1,0 +1,9 @@
+<ul class="timeline">
+    <li *ngFor="let study of education">
+        <h4 class="h5">{{ study.degree }}</h4>
+        <div class="clearfix">
+            <div class="float-left text-grey">{{ study.center }}</div>
+            <div class="float-right">{{ study.startYeartDate }} - {{ study.endYearDate }}</div>
+        </div>
+    </li>
+</ul>

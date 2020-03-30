@@ -1,0 +1,94 @@
+{
+    "firstName": "FirstName",
+    "lastName": "LastName",
+    "bithday": "01/01/1975",
+    "occupation": "Occupation",
+    "image": "https://avatars0.githubusercontent.com/u/19152081?s=460&u=d49410b4fe9c5a193a03095c433f56450e94c8c8&v=4",
+    "aboutMe": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia sapien vel risus rutrum feugiat. Donec fermentum magna est, quis placerat neque interdum quis. Mauris quis dolor vitae justo imperdiet tempor id sed augue. Ut aliquet tincidunt tempus. In a auctor justo, quis accumsan quam. Cras pellentesque scelerisque dictum.",
+    "contacts": [
+        {
+            "icon": "fas fa-envelope",
+            "value": "email@email.com"
+        },
+        {
+            "icon": "fas fa-mobile",
+            "value": "123 456 789"
+        },
+        {
+            "icon": "fab fa-linkedin-in",
+            "value": "/in/profile/"
+        },
+        {
+            "icon": "fab fa-github",
+            "value": "afuentespas"
+        }
+    ],
+    "education": [
+        {
+            "center": "Center Name 1",
+            "startYeartDate": 2013,
+            "endYearDate": 2015,
+            "degree": "Técnico Superior en Desarrollo de Aplicaciones Web."
+        },
+        {
+            "center": "Center Name 2",
+            "startYeartDate": 2011,
+            "endYearDate": 2013,
+            "degree": "Bachillerato."
+        },
+        {
+            "center": "Center Name 3",
+            "startYeartDate": 2000,
+            "endYearDate": 2004,
+            "degree": "Educación Secundaria Obligatoria."
+        }
+    ],
+    "courses": [
+        {
+            "center": "Trazos",
+            "degree": "Diseño Web: HTML, CSS, JavaScript y JQuery",
+            "hours": "150"
+        },
+        {
+            "center": "Escuela IT",
+            "degree": "Patrones de Diseño de Software",
+            "hours": "20"
+        },{
+            "center": "Escuela IT",
+            "degree": "Análisis y Diseño Orientado a Objetos",
+            "hours": "25"
+        }
+    ],
+    "experience": [
+        {
+           "job": "Developer | Desarrollador Web",
+           "company": "Company SA",
+           "startDate": "Jan 2015",
+           "endDate": "Jan 2020",
+           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia sapien vel risus rutrum feugiat. Donec fermentum magna est, quis placerat neque interdum quis. Mauris quis dolor vitae justo imperdiet tempor id sed augue. Ut aliquet tincidunt tempus. In a auctor justo, quis accumsan quam. Cras pellentesque scelerisque dictum."
+
+        },
+        {
+            "job": "Desarrollador Web",
+            "company": "Company SL",
+            "startDate": "Mar 2015",
+            "endDate": "Jun 2015",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia sapien vel risus rutrum feugiat. Donec fermentum magna est, quis placerat neque interdum quis. Mauris quis dolor vitae justo imperdiet tempor id sed augue. Ut aliquet tincidunt tempus. In a auctor justo, quis accumsan quam. Cras pellentesque scelerisque dictum.<br><br><p><strong>- Functions:</strong><br>· Lorem ipsum dolor sit amet.<br>· Lorem ipsum dolor sit amet.<br>· Lorem ipsum dolor sit amet.<br>· Lorem ipsum dolor sit amet.<br>· Lorem ipsum dolor sit amet.</p>"
+ 
+         }
+    ],
+    "languages": [
+        {
+            "name": "Español",
+            "level": "Nativo"
+        }
+    ],
+    "skills": [
+        {"name" : "Java", "percentage": "80"},
+        {"name" : "PHP", "percentage": "70"},
+        {"name" : "Angular", "percentage": "50"},
+        {"name" : "HTML", "percentage": "90"},
+        {"name" : "CSS", "percentage": "85"},
+        {"name" : "JavaScript", "percentage": "80"}
+    ]
+}

@@ -1,0 +1,12 @@
+<ul class="timeline">
+    <li *ngFor="let job of experience">
+        <h4 class="h5">{{job.job}}</h4>
+        <div class="clearfix">
+            <div class="float-left text-grey">{{job.company}}</div>
+            <div class="float-right">{{job.startDate}} - {{job.endDate}}</div>
+        </div>
+        <div class="contenido pt-3">
+            <p [innerHTML]="job.description"></p>
+        </div>
+    </li>
+</ul>

@@ -1,0 +1,14 @@
+@mixin personal-data($theme) {
+
+    $primary: map-get($theme, primary);
+    $secondary: map-get($theme, secondary);
+
+    .personal-data {
+        background: darken($primary, 8%);
+        color: $secondary;
+        border-bottom: 1px solid darken($primary, 10%);
+        & img{
+            border: 3px solid $secondary;
+        }
+    }
+}

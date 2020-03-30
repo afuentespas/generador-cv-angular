@@ -1,0 +1,15 @@
+@mixin complementary-education($theme) {
+
+    $primary: map-get($theme, primary);
+    $secondary: map-get($theme, secondary);
+
+    .complementary-education{
+        & h5{
+            color: $primary;
+        }
+        & i{
+            color: $primary;
+        }
+    }
+
+}

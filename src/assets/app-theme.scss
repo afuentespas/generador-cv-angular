@@ -1,0 +1,53 @@
+@import '../app/components/personal-data/personal-data';
+@import '../app/components/section/section';
+@import '../app/components/contacts/contacts';
+@import '../app/components/progress-skill/progress-skill';
+@import '../app/components/complementary-education/complementary-education';
+@import '../app/components/languages/languages';
+
+@mixin app-theme($theme) {
+    $primary: map-get($theme, primary);
+    $secondary: map-get($theme, secondary);
+
+    .left-column {
+        background: $primary;
+    }
+
+    .text-primary{
+        color: $primary;
+    }
+
+    .text-seconday{
+        color: $secondary;
+    }
+
+    ul {
+        &.timeline{
+            &:before{
+                content: ' ';
+                background: darken($secondary, 8%);
+            }
+            > li {
+                &:before {
+                    content: ' ';
+                    background: $secondary;
+                    border: 3px solid $primary;
+                }
+                & h4{
+                    color: $primary;
+                    & + div{
+                        color:darken($secondary, 100%);;
+                    }
+                }
+            }
+        }
+    }
+
+    @include personal-data($theme);
+    @include section($theme);
+    @include contacts($theme);
+    @include progress-skill($theme);
+    @include complementary-education($theme);
+    @include languages($theme);
+
+}
