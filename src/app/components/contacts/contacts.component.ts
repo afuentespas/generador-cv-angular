@@ -51,6 +51,7 @@ export class ContactsComponent implements OnInit {
   }
 
   closeModal(): void {
+    this.submitted = false;
     this.modal.hide();
   }
 
