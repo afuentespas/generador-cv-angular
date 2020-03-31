@@ -1,9 +1,46 @@
 <ul class="contacts">
-    <li *ngFor="let contact of contacts">
+    <li *ngFor="let contact of contacts; let i = index">
         <span class="fa-stack fa-1x mr-3">
             <i class="fas fa-circle fa-stack-2x"></i>
             <i class="{{ contact.icon }} fa-icon-color fa-stack-1x"></i>
           </span>
         {{ contact.value }}
+        <span class="float-right">
+            <i class="fas fa-pencil-alt mr-3 edit-element" (click)="editContact(i)"></i>
+            <i class="fas fa-trash-alt edit-element" (click)="deleteContact(i)"></i>
+        </span>
     </li>
 </ul>
+
+<div bsModal #modal="bs-modal" (onHidden)="clearForm()" class="modal fade" id="contact-modal" tabindex="-1" role="dialog" aria-labelledby="contact-data" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Contact</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="abstract">Contact</label>
+                        <input type="text" class="form-control" formControlName="value" [ngClass]="{ 'is-invalid': submitted && f.value.errors }">
+                        <div class="invalid-feedback">This field is required.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="abstract">Icon</label>
+                        <select class="form-control" formControlName="icon" [ngClass]="{ 'is-invalid': submitted && f.icon.errors }">
+                            <option *ngFor="let contactIcon of contactIcons" value="{{ contactIcon.iconClass }}"><span [innerHTML]="contactIcon.iconUnicode"></span> - {{ contactIcon.value }}</option>
+                        </select>
+                        <div class="invalid-feedback">This field is required.</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" (click)="closeModal()" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Confirm</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+[
+    {
+        "value": "Email",
+        "iconUnicode": "&#xf0e0;",
+        "iconClass": "fas fa-envelope"
+    },
+    {
+        "value": "Mobile",
+        "iconUnicode": "&#xf10b;",
+        "iconClass": "fas fa-mobile"
+    },
+    {
+        "value": "Phone",
+        "iconUnicode": "&#xf095;",
+        "iconClass": "fas fa-phone"
+    },
+    {
+        "value": "GitHub",
+        "iconUnicode": "&#xf09b;",
+        "iconClass": "fab fa-github"
+    },
+    {
+        "value": "LinkedIn",
+        "iconUnicode": "&#xf0e1;",
+        "iconClass": "fab fa-linkedin-in"
+    }
+]
