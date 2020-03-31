@@ -1,4 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ModalDirective } from 'ngx-bootstrap/modal/modal.directive';
 
 @Component({
   selector: 'cv-personal-data',
@@ -15,9 +17,35 @@ export class PersonalDataComponent implements OnInit {
 
   @Input() occupation: string;
 
-  constructor() { }
+  registerForm: FormGroup;
 
-  ngOnInit(): void { }
+  submitted: boolean = false;
+
+  @ViewChild('closeModal') closeModal;
+
+  constructor(private formBuilder: FormBuilder) { }
+
+  ngOnInit(): void { 
+    this.registerForm = this.formBuilder.group({
+      firstNameInput: [this.firstName, Validators.required],
+      lastNameInput: [this.lastName, Validators.required],
+      occupationInput: [this.occupation, Validators.required],
+    });
+  }
+
+  get f() { 
+    return this.registerForm.controls; 
+  }
+
+  onSubmit() : void {
+    this.submitted = true;
+    if (this.registerForm.valid) {
+      this.firstName = this.registerForm.get('firstNameInput').value;
+      this.lastName = this.registerForm.get('lastNameInput').value;
+      this.occupation = this.registerForm.get('occupationInput').value;
+      this.closeModal.nativeElement.click();
+    }
+  }
 
   onFileChange(event) {
     const acceptedImageTypes = ['image/gif', 'image/jpeg', 'image/png'];

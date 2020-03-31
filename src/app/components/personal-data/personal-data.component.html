@@ -2,7 +2,7 @@
     <div class="edit" data-toggle="modal" data-target="#personal-data-modal">
         <span class="fa-stack">
             <i class="far fa-circle fa-stack-2x"></i>
-            <i class="fas fa-plus fa-stack-1x"></i>
+            <i class="fas fa-pencil-alt fa-stack-1x"></i>
         </span>
     </div>
     <div class="text-center mb-3 w-100">
@@ -25,29 +25,33 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <form>
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <div class="modal-body">
                     <div class="form-group">
                         <label for="firstName">First Name</label>
-                        <input type="text" class="form-control" [(ngModel)]="firstName" name="firstName" id="firstName" value="{{ firstName }}" aria-describedby="firstNameHelp">
+                        <input type="text" class="form-control"  name="firstName" id="firstName" formControlName="firstNameInput" [ngClass]="{ 'is-invalid': submitted && f.firstNameInput.errors }" aria-describedby="firstNameHelp">
+                        <div class="invalid-feedback">This field is required.</div>
                     </div>
                     <div class="form-group">
                         <label for="lastName">Last Name</label>
-                        <input type="text" class="form-control" [(ngModel)]="lastName" name="lastName" id="lastName" value="{{ lastName }}" aria-describedby="lastNameHelp">
+                        <input type="text" class="form-control" name="lastName" id="lastName" formControlName="lastNameInput" [ngClass]="{ 'is-invalid': submitted && f.lastNameInput.errors }" aria-describedby="lastNameHelp">
+                        <div class="invalid-feedback">This field is required.</div>
                     </div>
                     <div class="form-group">
                         <label for="occupation">Occupation</label>
-                        <input type="text" class="form-control" [(ngModel)]="occupation" name="occupation" id="occupation" value="{{ occupation }}" aria-describedby="occupationHelp">
+                        <input type="text" class="form-control" name="occupation" id="occupation" formControlName="occupationInput" [ngClass]="{ 'is-invalid': submitted && f.occupationInput.errors }" aria-describedby="occupationHelp">
+                        <div class="invalid-feedback">This field is required.</div>
                     </div>
                     <div class="form-group">
                         <label for="image">Portrait</label>
                         <input type="file" (change)="onFileChange($event)" name ="image" class="form-control-file" id="image">
                     </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" #closeModal class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Confirm</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
