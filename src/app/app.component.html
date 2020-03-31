@@ -2,8 +2,8 @@
   <div class="row h-100">
     <div class="left-column col-4">
       <cv-personal-data [image]="cv.image" [firstName]="cv.firstName" [lastName]="cv.lastName" [occupation]="cv.occupation"></cv-personal-data>
-      <cv-section title="About Me" fontAwesomeIcon="fas fa-user-tie">
-        <p class="text-seconday">{{ cv.aboutMe }}</p>
+      <cv-section title="About Me" fontAwesomeIcon="fas fa-user-tie" modalId="about-me-modal" [isEdit]="true">
+        <cv-about-me [text]="cv.aboutMe"></cv-about-me>
       </cv-section> 
       <cv-section title="Contact" fontAwesomeIcon="fas fa-id-card">
         <cv-contacts [contacts]="cv.contacts"></cv-contacts>

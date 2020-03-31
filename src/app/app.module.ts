@@ -12,6 +12,7 @@ import { ExperienceComponent } from './components/experience/experience.componen
 import { EducationComponent } from './components/education/education.component';
 import { ComplementaryEducationComponent } from './components/complementary-education/complementary-education.component';
 import { LanguagesComponent } from './components/languages/languages.component';
+import { AboutMeComponent } from './components/about-me/about-me.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { LanguagesComponent } from './components/languages/languages.component';
     ExperienceComponent,
     EducationComponent,
     ComplementaryEducationComponent,
-    LanguagesComponent
+    LanguagesComponent,
+    AboutMeComponent
   ],
   imports: [
     BrowserModule,
