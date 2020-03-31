@@ -1,6 +1,5 @@
-import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ModalDirective } from 'ngx-bootstrap/modal/modal.directive';
 
 @Component({
   selector: 'cv-personal-data',
