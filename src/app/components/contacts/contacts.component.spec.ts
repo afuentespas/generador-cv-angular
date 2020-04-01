@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ContactsComponent } from './contacts.component';
+import { ReactiveFormsModule, FormBuilder } from '@angular/forms';
+import { ModalModule } from 'ngx-bootstrap/modal'
 
 describe('ContactsComponent', () => {
   let component: ContactsComponent;
@@ -8,7 +10,9 @@ describe('ContactsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContactsComponent ]
+      declarations: [ ContactsComponent ],
+      imports: [ ReactiveFormsModule, ModalModule.forRoot() ],
+      providers: [ FormBuilder ]
     })
     .compileComponents();
   }));
