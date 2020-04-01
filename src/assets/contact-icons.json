@@ -23,5 +23,10 @@
         "value": "LinkedIn",
         "iconUnicode": "&#xf0e1;",
         "iconClass": "fab fa-linkedin-in"
+    },
+    {
+        "value": "Website",
+        "iconUnicode": "&#xf57d;",
+        "iconClass": "fas fa-globe-americas"
     }
 ]
