@@ -15,8 +15,8 @@
             <div class="form-group">
                 <label for="abstract">Percentage</label>
                 <input type="number" class="form-control" formControlName="percentage" [ngClass]="{ 'is-invalid': submitted && f.percentage.errors}">
-                <div *ngIf="f.percentage.errors.required" class="invalid-feedback">This field is required.</div>
-                <div *ngIf="f.percentage.errors.min || f.percentage.errors.max" class="invalid-feedback">Percentage out of range 0 - 100.</div>
+                <div *ngIf="f.percentage.errors && f.percentage.errors.required" class="invalid-feedback">This field is required.</div>
+                <div *ngIf="f.percentage.errors && f.percentage.errors.min || f.percentage.errors.max" class="invalid-feedback">Percentage out of range 0 - 100.</div>
             </div>
         </div>
     </form>
