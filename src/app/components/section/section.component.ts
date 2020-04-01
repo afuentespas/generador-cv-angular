@@ -13,10 +13,6 @@ export class SectionComponent implements OnInit {
 
   @Input() inverse: boolean = false;
 
-  @Input() modalId: string;
-
-  @Input() isEdit: boolean;
-
   constructor() { }
 
   ngOnInit(): void { }

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ModalComponent } from '../modal/modal.component';
 
 @Component({
   selector: 'cv-about-me',
@@ -14,7 +15,7 @@ export class AboutMeComponent implements OnInit {
 
   submitted: boolean = false;
 
-  @ViewChild('closeModal') closeModal;
+  @ViewChild(ModalComponent, { static: false }) modalComponent: ModalComponent;
 
   constructor(private formBuilder: FormBuilder) { }
 
@@ -28,12 +29,24 @@ export class AboutMeComponent implements OnInit {
     return this.registerForm.controls; 
   }
 
-  onSubmit(): void {
+  openModal(): void {
+    this.modalComponent.openModal();
+  }
+
+  closeModal(): void {
+    this.submitted = false;
+    this.modalComponent.closeModal();
+  }
+
+  onSubmit(): boolean {
+    let isOK = false;
     this.submitted = true;
     if (this.registerForm.valid) {
       this.text = this.registerForm.get('textInput').value;
-      this.closeModal.nativeElement.click();
+      this.closeModal();
+      isOK = true;
     }
+    return isOK;
   }
 
 }

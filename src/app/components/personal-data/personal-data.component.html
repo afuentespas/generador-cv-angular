@@ -1,10 +1,4 @@
 <div class="row personal-data py-3"> 
-    <div class="edit" data-toggle="modal" data-target="#personal-data-modal">
-        <span class="fa-stack">
-            <i class="far fa-circle fa-stack-2x"></i>
-            <i class="fas fa-pencil-alt fa-stack-1x"></i>
-        </span>
-    </div>
     <div class="text-center mb-3 w-100">
         <img class="rounded-circle" src="{{ image }}" alt="Profile Photo">
     </div>
@@ -15,43 +9,28 @@
         <p class="card-text text-center"><i>{{ occupation }}</i></p>
     </div>
 </div>
-
-<div class="modal fade" id="personal-data-modal" tabindex="-1" role="dialog" aria-labelledby="personal-data" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Personal Data</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+<div class="persona-data-model">
+    <cv-modal title="Personal Data" [isPersonalSection]="true" icon="fas fa-pencil-alt" (submitEvent)="onSubmit()">
+        <form [formGroup]="registerForm">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" class="form-control"  name="firstName" id="firstName" formControlName="firstNameInput" [ngClass]="{ 'is-invalid': submitted && f.firstNameInput.errors }" aria-describedby="firstNameHelp">
+                <div class="invalid-feedback">This field is required.</div>
             </div>
-            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="firstName">First Name</label>
-                        <input type="text" class="form-control"  name="firstName" id="firstName" formControlName="firstNameInput" [ngClass]="{ 'is-invalid': submitted && f.firstNameInput.errors }" aria-describedby="firstNameHelp">
-                        <div class="invalid-feedback">This field is required.</div>
-                    </div>
-                    <div class="form-group">
-                        <label for="lastName">Last Name</label>
-                        <input type="text" class="form-control" name="lastName" id="lastName" formControlName="lastNameInput" [ngClass]="{ 'is-invalid': submitted && f.lastNameInput.errors }" aria-describedby="lastNameHelp">
-                        <div class="invalid-feedback">This field is required.</div>
-                    </div>
-                    <div class="form-group">
-                        <label for="occupation">Occupation</label>
-                        <input type="text" class="form-control" name="occupation" id="occupation" formControlName="occupationInput" [ngClass]="{ 'is-invalid': submitted && f.occupationInput.errors }" aria-describedby="occupationHelp">
-                        <div class="invalid-feedback">This field is required.</div>
-                    </div>
-                    <div class="form-group">
-                        <label for="image">Portrait</label>
-                        <input type="file" (change)="onFileChange($event)" name ="image" class="form-control-file" id="image">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" #closeModal class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Confirm</button>
-                </div>
-            </form>
-        </div>
-    </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" class="form-control" name="lastName" id="lastName" formControlName="lastNameInput" [ngClass]="{ 'is-invalid': submitted && f.lastNameInput.errors }" aria-describedby="lastNameHelp">
+                <div class="invalid-feedback">This field is required.</div>
+            </div>
+            <div class="form-group">
+                <label for="occupation">Occupation</label>
+                <input type="text" class="form-control" name="occupation" id="occupation" formControlName="occupationInput" [ngClass]="{ 'is-invalid': submitted && f.occupationInput.errors }" aria-describedby="occupationHelp">
+                <div class="invalid-feedback">This field is required.</div>
+            </div>
+            <div class="form-group">
+                <label for="image">Portrait</label>
+                <input type="file" (change)="onFileChange($event)" name ="image" class="form-control-file" id="image">
+            </div>
+        </form>
+    </cv-modal>
 </div>

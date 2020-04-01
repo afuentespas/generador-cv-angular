@@ -11,9 +11,6 @@
                 background: darken($primary, 8%);
             }
         }
-        > .edit {
-            color: $secondary;
-        }
         &.inverse {
             border-bottom: 1px solid darken($secondary, 5%);
             h2 {
@@ -22,9 +19,6 @@
                     color: $secondary;
                     background: darken($primary, 8%);
                 }
-            }
-            > .edit {
-                color: $primary;
             }
         }
     }

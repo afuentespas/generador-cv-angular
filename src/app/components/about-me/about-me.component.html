@@ -1,27 +1,12 @@
-<p class="text-seconday">{{ text }}</p>
-
-<div class="modal fade" id="about-me-modal" tabindex="-1" role="dialog" aria-labelledby="about-me" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">About Me</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+<p class="text-secondary">{{ text }}</p>
+<cv-modal title="About Me" (submitEvent)="onSubmit()">
+    <form [formGroup]="registerForm">
+        <div class="modal-body">
+            <div class="form-group">
+                <label for="abstract">Abstract</label>
+                <textarea class="form-control" rows="8" formControlName="textInput" [ngClass]="{ 'is-invalid': submitted && f.textInput.errors }"></textarea>
+                <div class="invalid-feedback">This field is required.</div>
             </div>
-            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="abstract">Abstract</label>
-                        <textarea class="form-control" rows="8" formControlName="textInput" [ngClass]="{ 'is-invalid': submitted && f.textInput.errors }"></textarea>
-                        <div class="invalid-feedback">This field is required.</div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" #closeModal class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Confirm</button>
-                </div>
-            </form>
         </div>
-    </div>
-</div>
+    </form>
+</cv-modal>

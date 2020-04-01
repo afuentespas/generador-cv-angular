@@ -1,11 +1,4 @@
 <section class="section" [ngClass]="{'inverse':inverse}">
-    <div *ngIf="modalId" class="edit" data-toggle="modal" [attr.data-target]="'#'+modalId">
-        <span class="fa-stack">
-            <i class="far fa-circle fa-stack-2x"></i>
-            <i *ngIf="isEdit" class="fas fa-pencil-alt fa-stack-1x"></i>
-            <i *ngIf="!isEdit" class="fas fa-plus fa-stack-1x"></i>
-        </span>
-    </div>
     <h2 class="h5 text-uppercase mb-3"><i class="{{ fontAwesomeIcon }} text-center mr-3"></i>  {{ title }}</h2>
     <ng-content></ng-content>
 </section>

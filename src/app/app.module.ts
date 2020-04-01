@@ -14,6 +14,7 @@ import { EducationComponent } from './components/education/education.component';
 import { ComplementaryEducationComponent } from './components/complementary-education/complementary-education.component';
 import { LanguagesComponent } from './components/languages/languages.component';
 import { AboutMeComponent } from './components/about-me/about-me.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { AboutMeComponent } from './components/about-me/about-me.component';
     EducationComponent,
     ComplementaryEducationComponent,
     LanguagesComponent,
-    AboutMeComponent
+    AboutMeComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

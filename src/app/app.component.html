@@ -2,10 +2,10 @@
   <div class="row h-100">
     <div class="left-column col-4">
       <cv-personal-data [image]="cv.image" [firstName]="cv.firstName" [lastName]="cv.lastName" [occupation]="cv.occupation"></cv-personal-data>
-      <cv-section title="About Me" fontAwesomeIcon="fas fa-user-tie" modalId="about-me-modal" [isEdit]="true">
+      <cv-section title="About Me" fontAwesomeIcon="fas fa-user-tie">
         <cv-about-me [text]="cv.aboutMe"></cv-about-me>
       </cv-section> 
-      <cv-section title="Contact" fontAwesomeIcon="fas fa-id-card" modalId="contact-modal" [isEdit]="false">
+      <cv-section title="Contact" fontAwesomeIcon="fas fa-id-card">
         <cv-contacts [contacts]="cv.contacts"></cv-contacts>
       </cv-section>
       <cv-section title="Skills" fontAwesomeIcon="fas fa-cogs">

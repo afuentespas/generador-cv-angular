@@ -1,0 +1,14 @@
+.edit {
+    position: absolute;
+    right: 5px;
+    top: 0px;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.personal {
+    top: 15px;
+    right: 20px;
+}

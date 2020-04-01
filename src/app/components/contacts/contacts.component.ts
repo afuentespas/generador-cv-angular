@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ModalDirective } from 'ngx-bootstrap/modal';
 import contactIcons from '../../../assets/contact-icons.json';
+import { ModalComponent } from '../modal/modal.component';
 
 @Component({
   selector: 'cv-contacts',
@@ -18,7 +18,7 @@ export class ContactsComponent implements OnInit {
 
   contactIcons: any[];
 
-  @ViewChild(ModalDirective, { static: false }) modal: ModalDirective;
+  @ViewChild(ModalComponent, { static: false }) modalComponent: ModalComponent;
 
   constructor(private formBuilder: FormBuilder) { }
 
@@ -39,7 +39,7 @@ export class ContactsComponent implements OnInit {
     this.registerForm.get('value').setValue(this.contacts[index].value);
     this.registerForm.get('icon').setValue(this.contacts[index].icon);
     this.registerForm.get('index').setValue(index);
-    this.modal.show();
+    this.modalComponent.openModal();
   }
 
   deleteContact(index: number): void {
@@ -50,15 +50,21 @@ export class ContactsComponent implements OnInit {
     this.registerForm.reset();
   }
 
-  closeModal(): void {
-    this.submitted = false;
-    this.modal.hide();
+  openModal(): void {
+    this.modalComponent.openModal();
   }
 
-  onSubmit(): void{
+  closeModal(): void {
+    this.submitted = false;
+    this.clearForm();
+    this.modalComponent.closeModal();
+  }
+
+  onSubmit(): boolean{
+    let isOk = false;
     this.submitted = true;
     if (this.registerForm.valid) {
-      if(this.registerForm.get('index').value !== ''){
+      if(this.registerForm.get('index').value != null && this.registerForm.get('index').value !== ''){
         this.contacts[this.registerForm.get('index').value].value = this.registerForm.get('value').value;
         this.contacts[this.registerForm.get('index').value].icon = this.registerForm.get('icon').value;
       } else {
@@ -67,8 +73,11 @@ export class ContactsComponent implements OnInit {
           icon: this.registerForm.get('icon').value
         })
       }
+      isOk = true;
+      this.registerForm.reset();
+      this.closeModal();
     }
-    this.modal.hide();
+    return isOk;
   }
 
 }
