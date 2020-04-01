@@ -1,3 +1,31 @@
 <ul class="languages">
-    <li *ngFor="let lang of languages">{{ lang.name }} - {{ lang.level }}</li>
+    <li *ngFor="let lang of languages; let i = index">
+        {{ lang.name }} - {{ lang.level }}
+        <span class="float-right">
+            <i class="fas fa-pencil-alt mr-3 edit-element" (click)="editLanguage(i)"></i>
+            <i class="fas fa-trash-alt edit-element" (click)="deleteLanguage(i)"></i>
+        </span>
+    </li>
 </ul>
+
+<cv-modal title="Languages" (submitEvent)="onSubmit()" (closeModalEvent)="clearForm()">
+    <form [formGroup]="registerForm">
+        <div class="modal-body">
+            <div class="form-group">
+                <label for="abstract">Language name</label>
+                <input type="text" class="form-control" formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.name.errors}">
+                <div class="invalid-feedback">This field is required.</div>
+            </div>
+            <div class="form-group">
+                <label for="abstract">Level</label>
+                <select class="form-control" formControlName="level" [ngClass]="{ 'is-invalid': submitted && f.level.errors}">
+                    <option value="Competencia básica.">Competencia básica.</option>
+                    <option value="Competencia básica profesional.">Competencia básica profesional.</option>
+                    <option value="Competencia profesional completa.">Competencia profesional completa.</option>
+                    <option value="Competencia nativa o bilingüe.">Competencia nativa o bilingüe.</option>
+                </select>
+                <div class="invalid-feedback">This field is required.</div>
+            </div>
+        </div>
+    </form>
+</cv-modal>
