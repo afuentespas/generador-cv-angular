@@ -15,6 +15,7 @@ import { ComplementaryEducationComponent } from './components/complementary-educ
 import { LanguagesComponent } from './components/languages/languages.component';
 import { AboutMeComponent } from './components/about-me/about-me.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { SkillsComponent } from './components/skills/skills.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { ModalComponent } from './components/modal/modal.component';
     ComplementaryEducationComponent,
     LanguagesComponent,
     AboutMeComponent,
-    ModalComponent
+    ModalComponent,
+    SkillsComponent
   ],
   imports: [
     BrowserModule,

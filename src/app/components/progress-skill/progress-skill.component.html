@@ -1,5 +1,11 @@
 <div class="progress-skill mb-3">
-    <h3 class="h6">{{ skillName }}</h3>
+    <h3 class="h6">
+        {{ skillName }}
+        <span class="float-right">
+            <i class="fas fa-pencil-alt mr-3 edit-element" (click)="editSkill()"></i>
+            <i class="fas fa-trash-alt edit-element" (click)="deleteSkill()"></i>
+        </span>
+    </h3>
     <div class="progress" style="height: 10px;">
         <div class="progress-bar" role="progressbar" [style.width.%]="percentage" [attr.aria-valuenow]="percentage" aria-valuemin="0" aria-valuemax="100"></div>
     </div>

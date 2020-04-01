@@ -1,0 +1,23 @@
+<ul class="skills pl-0">
+    <li *ngFor="let skill of skills; let i = index">
+        <cv-progress-skill [skillName]="skill.name" [percentage]="skill.percentage" [index]="i" (edit)="editSkill($event)" (delete)="deleteSkill($event)"></cv-progress-skill>
+    </li>
+</ul>
+
+<cv-modal title="Skills" (submitEvent)="onSubmit()" (closeModalEvent)="clearForm()">
+    <form [formGroup]="registerForm">
+        <div class="modal-body">
+            <div class="form-group">
+                <label for="abstract">Skill name</label>
+                <input type="text" class="form-control" formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.name.errors}">
+                <div class="invalid-feedback">This field is required.</div>
+            </div>
+            <div class="form-group">
+                <label for="abstract">Percentage</label>
+                <input type="number" class="form-control" formControlName="percentage" [ngClass]="{ 'is-invalid': submitted && f.percentage.errors}">
+                <div *ngIf="f.percentage.errors.required" class="invalid-feedback">This field is required.</div>
+                <div *ngIf="f.percentage.errors.min || f.percentage.errors.max" class="invalid-feedback">Percentage out of range 0 - 100.</div>
+            </div>
+        </div>
+    </form>
+</cv-modal>

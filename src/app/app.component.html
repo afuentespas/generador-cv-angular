@@ -9,7 +9,7 @@
         <cv-contacts [contacts]="cv.contacts"></cv-contacts>
       </cv-section>
       <cv-section title="Skills" fontAwesomeIcon="fas fa-cogs">
-        <cv-progress-skill *ngFor="let skill of cv.skills" [skillName]="skill.name" [percentage]="skill.percentage"></cv-progress-skill>
+        <cv-skills [skills]="cv.skills"></cv-skills>
       </cv-section>
       <cv-section title="Languages" fontAwesomeIcon="fas fa-globe-europe">
         <cv-languages [languages]="cv.languages"></cv-languages>

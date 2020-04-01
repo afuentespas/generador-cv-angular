@@ -47,17 +47,12 @@ export class ContactsComponent implements OnInit {
   }
 
   clearForm(): void {
+    this.submitted = false;
     this.registerForm.reset();
   }
 
   openModal(): void {
     this.modalComponent.openModal();
-  }
-
-  closeModal(): void {
-    this.submitted = false;
-    this.clearForm();
-    this.modalComponent.closeModal();
   }
 
   onSubmit(): boolean{
@@ -74,8 +69,7 @@ export class ContactsComponent implements OnInit {
         })
       }
       isOk = true;
-      this.registerForm.reset();
-      this.closeModal();
+      this.modalComponent.closeModal();
     }
     return isOk;
   }
