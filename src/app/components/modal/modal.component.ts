@@ -20,6 +20,8 @@ export class ModalComponent implements OnInit {
 
   @Output() submitEvent: EventEmitter<any> = new EventEmitter();
 
+  @Output() closeModalEvent: EventEmitter<any> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void { }
@@ -30,6 +32,7 @@ export class ModalComponent implements OnInit {
 
   closeModal(): void {
     this.modal.hide();
+    this.closeModalEvent.emit();
   }
 
   onSubmit(): void {
